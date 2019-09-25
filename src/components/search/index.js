@@ -59,7 +59,7 @@ class Search extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 40,
+    height: 60,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#64dd17',
