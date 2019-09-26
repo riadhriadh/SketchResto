@@ -29,7 +29,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
-  return <SvgTest />;
+  return <Detaile />;
 };
 
 const styles = StyleSheet.create({

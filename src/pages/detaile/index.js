@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {isTSTypeElement} from '@babel/types';
 import ActionSheet from 'ActionSheet';
+import Tabbar from '../../components/Tabbar/index';
 // create a component
 const DATA = [
   {
@@ -153,6 +154,7 @@ class Detaile extends Component {
           />
         </View>
         <ActionSheet ref={o => (this.ActionSheet = o)} />
+        <Tabbar style={{justifyContent: 'flex-end'}}></Tabbar>
       </View>
     );
   }
