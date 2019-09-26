@@ -153,8 +153,25 @@ class Detaile extends Component {
             keyExtractor={item => item.id}
           />
         </View>
-        <ActionSheet ref={o => (this.ActionSheet = o)} />
-        <Tabbar style={{justifyContent: 'flex-end'}}></Tabbar>
+        <ActionSheet ref={o => (this.ActionSheet = o)}>
+          <View
+            style={{height: 55, width: '100%', backgroundColor: 'red'}}></View>
+          <View
+            style={{
+              backgroundColor: '#64dd17',
+              height: 55,
+              marginHorizontal: 10,
+              marginVertical: 10,
+              borderRadius: 10,
+              justifyContent: 'center',
+            }}>
+            <Text style={{color: 'white', textAlign: 'center', fontSize: 15}}>
+              {' '}
+              Add to Reminders
+            </Text>
+          </View>
+        </ActionSheet>
+        <Tabbar></Tabbar>
       </View>
     );
   }

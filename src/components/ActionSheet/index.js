@@ -42,7 +42,7 @@ class ActionSheet extends Component {
         transparent
         style={{flex: 1}}
         onRequestClose={this._cancel}>
-        <TouchableOpacity
+        <View
           onPress={() =>
             this.setState({
               visible: false,
@@ -53,14 +53,22 @@ class ActionSheet extends Component {
 
             flex: 1,
           }}>
-          <View style={{flex: 1}}></View>
+          <TouchableOpacity
+            onPress={() =>
+              this.setState({
+                visible: false,
+              })
+            }
+            style={{flex: 1}}></TouchableOpacity>
           <View
             style={{
               height: '60%',
               backgroundColor: 'white',
               justifyContent: 'flex-end',
-            }}></View>
-        </TouchableOpacity>
+            }}>
+            {this.props.children}
+          </View>
+        </View>
       </Modal>
     );
   }

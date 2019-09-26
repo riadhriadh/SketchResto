@@ -134,7 +134,7 @@ class Tabbar extends React.PureComponent<TabbarProps> {
   render() {
     const {value: translateX} = this;
     return (
-      <View>
+      <View style={{position: 'absolute', left: 0, bottom: 0, right: 0}}>
         <View {...{width, height}}>
           <AnimatedSvg
             width={width * 2}

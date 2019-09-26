@@ -38,25 +38,23 @@ class SvgTest extends Component {
     const {x} = this.state;
     return (
       <View style={styles.container}>
-        <View>
-          <Animated.ScrollView
-            bounces={false}
-            horizontal
-            scrollEventThrottle={16}
-            showHorizontalScrollIndicator={false}
-            onScroll={Animated.event([
-              {
-                nativeEvent: {
-                  contentOffset: {x},
-                },
+        <Animated.ScrollView
+          bounces={false}
+          horizontal
+          scrollEventThrottle={16}
+          showHorizontalScrollIndicator={false}
+          onScroll={Animated.event([
+            {
+              nativeEvent: {
+                contentOffset: {x},
               },
-            ])}>
+            },
+          ])}>
+          <WaveForm {...{waveformdata}} color={'#ff6d00'} progress={x} />
+          <View>
             <WaveForm {...{waveformdata}} color={'#ff6d00'} progress={x} />
-            <View>
-              <WaveForm {...{waveformdata}} color={'#ff6d00'} progress={x} />
-            </View>
-          </Animated.ScrollView>
-        </View>
+          </View>
+        </Animated.ScrollView>
       </View>
     );
   }

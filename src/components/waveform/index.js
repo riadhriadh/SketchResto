@@ -35,6 +35,7 @@ type WaveformProps = {
 class WaveForm extends Component<WaveformProps> {
   render() {
     const {waveformdata, color} = this.props;
+
     const width = waveformdata.width * (barWidth + barMargin) + offset;
     const height = waveformdata.height + barMargin + waveformdata.height * 0.61;
     const AnimatedReact = Animated.createAnimatedComponent(Rect);
