@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
   Animated,
   Dimensions,
+  Easing,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 interface Tab {
@@ -18,6 +19,18 @@ interface StaticTabbarProps {
 
 export const tabHeight = 64;
 const {width} = Dimensions.get('window');
+const spinValue = new Animated.Value(0);
+
+// First set up animation
+Animated.timing(spinValue, {
+  toValue: 1,
+  duration: 3000,
+  easing: Easing.linear,
+}).start();
+const spin = spinValue.interpolate({
+  inputRange: [0, 1],
+  outputRange: ['0deg', '360deg'],
+});
 // create a component
 class StaticTabbar extends React.PureComponent<StaticTabbarProps> {
   onPress = (index: number) => {
@@ -67,9 +80,9 @@ class StaticTabbar extends React.PureComponent<StaticTabbarProps> {
                       // backgroundColor: 'red',
                       // borderRadius: 30,
                     }}>
-                    <View style={styles.circle}>
+                    <Animated.View style={styles.circle}>
                       <Icon size={30} name={name} color="#64dd17" />
-                    </View>
+                    </Animated.View>
                   </View>
                 </TouchableWithoutFeedback>
               </React.Fragment>
