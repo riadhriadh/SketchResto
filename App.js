@@ -19,6 +19,7 @@ import Recipes from './src/pages/recipes/index';
 import RecipesDetaile from './src/pages/recipes_detaile/index';
 import Detaile from './src/pages/detaile/index';
 import SvgTest from './src/pages/svgtest/index';
+import BackgroundJob from 'react-native-background-job';
 
 import {
   Header,

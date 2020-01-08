@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {isTSTypeElement} from '@babel/types';
 import ActionSheet from 'ActionSheet';
+import BackgroundJob from 'react-native-background-job';
 import Tabbar from '../../components/Tabbar/index';
 // create a component
 const DATA = [
@@ -31,6 +32,21 @@ class Detaile extends Component {
   showActionSheet = () => {
     this.ActionSheet.show();
   };
+  componentDidMount() {
+    console.log('Running');
+    const backgroundJob = {
+      jobKey: 'myJob',
+      job: () => {
+        console.log('Running in background');
+        for (let i = 0; i < 200; i++) {
+          setInterval(() => {
+            console.log('slep', i);
+          }, 500);
+        }
+      },
+    };
+    BackgroundJob.register(backgroundJob);
+  }
   render() {
     return (
       <View style={styles.container}>
